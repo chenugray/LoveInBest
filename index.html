@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>hello hello hellof</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*hello, </span><br />
+			<span class="space"/><span class="comments">*world.</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			惊喜不惊喜 <span class="keyword">Miss.</span> Liu<br />
+			我也不知道网页出了啥问题<span class="keyword"> 也许有点</span> 小bug了<br />
+			<span class="comments">// 今天天气真不错. </span><br />
+			因为你回来了;<br />
+			<span class="comments">// 也许这是一个有趣的bug.</span><br />
+			你可不可以当作什么都没看到;<br />
+			<span class="comments">// 嗯，其实我也不知道为什么我要加这个进来.</span><br />
+			<br>
+			<br>
+			反正我也不知道为什么<br />
+			今天就是好高兴;<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					其实我就想问问你 <!-- 如果你按F12 看到这句话 我其实想说的是 你真的很可爱 我想更多的更多的了解你 无论过去现在将来 只要是关于你的 我都很喜欢-->
+				<!--	<div id="elapseClock"></div> -->
+				<div id="message">
+				但是你真的可爱啊
+				</div>
+				</div>
+				<div id="loveu">
+					周末有时间吗。<br/>
+					<div class="signature"> by bug maker</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">
+		
+		
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2013, 2, 28);
+together.setHours(20);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+
+</body>
+</html>
